@@ -1,4 +1,4 @@
-# Darkdown Demo
+# Snarkdown Demo
 
 ## MyClass
 
