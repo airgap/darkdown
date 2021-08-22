@@ -8,7 +8,8 @@
 2. Ask "What's your favorite food?" into faveFood
 
 ## Main
-
+> This function serves as the entry point, much like in C#
+> > Hey look, nested comments!
 ### Static Main
 
 1. Run MyClass's AskStuff into Int num, String food

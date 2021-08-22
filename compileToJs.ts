@@ -72,7 +72,7 @@ export class Line {
 				output.push(new Line(`let ${returnsNotProvided.map(({ name }) => name).join(', ')};`, scopeDepth));
 				currentScopeVariables.push(...returnsNotProvided);
 			}
-		} else if (/^[0-9]+ /) {
+		} else if (/^[0-9]+. /.exec(line)) {
 			// It's a line
 			const { lineContent } = /^[0-9]+. (?<lineContent>.+)$/.exec(line).groups;
 			if (/^Run /.test(lineContent)) {
@@ -122,7 +122,7 @@ export class Line {
 					)
 				);
 			}
-		}
+		} else if (/^\s*>/.test(line)) output.push(new Line(`// ${/^\s*>(.*)$/.exec(line)?.[1] ?? ''}`, scopeDepth));
 		// else if(isClassDefinition(line))
 		//     handleClassDefinition(line);
 	}
