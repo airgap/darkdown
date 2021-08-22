@@ -1,0 +1,26 @@
+{
+  "name": "darkdown",
+  "version": "0.0.0",
+  "description": "If markdown was a programming language",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicole Muzzin",
+  "license": "UNLICENSED",
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 4,
+    "useTabs": true,
+    "semi": true,
+    "singleQuote": true,
+    "quoteProps": "consistent",
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "arrowParens": "avoid",
+    "parser": "babel-ts"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.2"
+  }
+}
