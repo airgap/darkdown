@@ -2,15 +2,19 @@ import { Variable, VariableType } from '../Variable';
 
 export const parseFunctionDefinition = (
 	line: string
-): {
-	static: boolean;
-	name: string;
-	accepts: Variable[];
-	returns: Variable[];
-} => {
-	const { stat, name, accepts, returns } = line.match(
+):
+	| {
+			static: boolean;
+			name: string;
+			accepts: Variable[];
+			returns: Variable[];
+	  }
+	| undefined => {
+	const funcDef = line.match(
 		/^### ?(?<stat>Static )?(?<name>[a-zA-Z0-9]+)(?: accepts (?<accepts> (?:int|string|array|boolean) ([a-zA-Z0-9]+)(?:, ((?:int|string|array|boolean) [a-zA-Z0-9]+))*))?(?: returns (?<returns>void|((int|string|array|boolean) [a-zA-Z0-9]+)(, ((int|string|array|boolean) [a-zA-Z0-9]+))*))?$/i
-	).groups;
+	)?.groups;
+	if (!funcDef) return;
+	const { stat, name, accepts, returns } = funcDef;
 	return {
 		static: !!stat,
 		name,
