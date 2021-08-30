@@ -4,6 +4,7 @@
   "description": "If markdown was a programming language",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node compileToJs.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nicole Muzzin",
@@ -22,5 +23,8 @@
   },
   "devDependencies": {
     "prettier": "^2.3.2"
+  },
+  "dependencies": {
+    "ts-node": "^10.2.1"
   }
 }
